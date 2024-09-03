@@ -1,4 +1,4 @@
-# vue-social-demo
+# vue-social Demo Project
 
 ## Project setup
 ```
