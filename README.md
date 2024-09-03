@@ -1,5 +1,8 @@
 # vue-social Demo Project
 
+Demo project using vue-socials library on Vue3
+Project setup date: Sept. 3 2024
+
 ## Project setup
 ```
 yarn install
