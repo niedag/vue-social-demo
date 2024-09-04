@@ -1,26 +1,44 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <s-twitter
+    :window-features="windowFeatures"
+    :share-options="shareOptions"
+    :use-native-behavior="useNativeBehavior"
+    @popup-close="onClose"
+    @popup-open="onOpen"
+    @popup-block="onBlock"
+    @popup-focus="onFocus"
+  >
+    <!-- your icon component -->
+  <a>Click me to send a Twitter post</a>
+  </s-twitter>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+  import { STwitter } from 'vue-socials'
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  export default {
+    name: 'STwitterSharing',
+    
+    components: { STwitter },
+    
+    data() {
+      return {
+        windowFeatures: {},
+        shareOptions: {
+          url: 'https://github.com/',
+          text: 'Hello world',
+          hashtags: ['hash', 'tag'],
+          via: 'twitterdev',
+        },
+        useNativeBehavior: false,
+      }
+    },
+    
+    methods: {
+      onClose() {},
+      onOpen() {},
+      onBlock() {},
+      onFocus() {},
+    }
+  };
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
